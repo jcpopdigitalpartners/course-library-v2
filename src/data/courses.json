@@ -96,7 +96,7 @@
     "url": "https://jcpopdigitalpartners.github.io/cmo-blog/",
     "outcome": "Understand that teams want a more opinionated path.",
     "visual": "growthbook",
-    "preview": "",
+    "preview": "/previews/growthbook-opening.png",
     "locked": false
   },
   {
@@ -109,7 +109,7 @@
     "url": "https://jcpopdigitalpartners.github.io/mock-ehr-ai-coach/",
     "outcome": "Review synthetic medication access cases and use AI-guided remediation while preserving payer and safety requirements.",
     "visual": "carepath",
-    "preview": "",
+    "preview": "/previews/ehr-ai-coach-opening.png",
     "locked": false
   }
 ]
