@@ -1,8 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="320" height="76" viewBox="0 0 320 76" fill="none">
-  <rect x="4" y="4" width="68" height="68" rx="19" fill="#101828"/>
-  <path d="M27 52V31.5L38 25L49 31.5V52H27Z" stroke="#F8FAFC" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M34 52V42H42V52M38 31V38M34.5 34.5H41.5" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M54 52H22" stroke="#F8FAFC" stroke-width="3" stroke-linecap="round"/>
-  <text x="88" y="39" fill="#101828" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="25" font-weight="700" letter-spacing="-0.7">CarePath</text>
-  <text x="89" y="59" fill="#526174" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="2.4">EHR TRAINING</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76" fill="none">
+  <path d="M18 61V30L38 18L58 30V61H18Z" stroke="#008F87" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M30 61V46H46V61M38 29V40M32.5 34.5H43.5M61 48H68M64.5 44.5V51.5" stroke="#008F87" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
