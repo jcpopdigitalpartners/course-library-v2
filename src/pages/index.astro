@@ -55,6 +55,7 @@ const canonical = new URL(`${base}/`, Astro.site);
             {course.visual === 'webflow' && <div class="webflow-cloud-logo"><img src={`${base}/webflow-cloud-logo.svg`} alt="" /><span>Webflow Cloud</span></div>}
             {course.visual === 'containers' && <div class="kubernetes-logo-wrap"><img class="kubernetes-logo" src={`${base}/kubernetes-logo.svg`} alt="Kubernetes" /></div>}
             {course.visual === 'growthbook' && <div class="growthbook-logo-wrap"><img class="growthbook-logo" src={`${base}/growthbook-logo.svg`} alt="GrowthBook" /></div>}
+            {course.visual === 'carepath' && <div class="carepath-logo-wrap"><img class="carepath-logo" src={`${base}/carepath-ehr-logo.svg`} alt="CarePath EHR" /></div>}
             {course.visual === 'blog' && <svg class="library-object-icon" viewBox="0 0 320 150" role="img" aria-label="Branching workflow">
               <g fill="none" stroke="#ff995e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M115 26h67l24 24v74H115z" fill="#252831" /><path d="M182 26v25h24M131 66h58M131 80h42" opacity=".8" />
@@ -82,6 +83,10 @@ const canonical = new URL(`${base}/`, Astro.site);
     .growthbook .cover-id, .growthbook .cover-bottom { color: #d6dbe7; }
     .growthbook-logo-wrap { flex: 1; display: flex; align-items: center; justify-content: center; }
     .growthbook-logo { display: block; width: min(100%, 300px); height: auto; }
+    .carepath { background: #f1f5f9; }
+    .carepath .cover-id, .carepath .cover-bottom { color: #526174; }
+    .carepath-logo-wrap { flex: 1; display: flex; align-items: center; justify-content: center; }
+    .carepath-logo { display: block; width: min(100%, 300px); height: auto; }
   </style>
   <div id="course-preview" aria-hidden="true" hidden><img alt="" /></div>
   <div id="course-wipe" aria-hidden="true" hidden></div>

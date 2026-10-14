@@ -98,5 +98,18 @@
     "visual": "growthbook",
     "preview": "",
     "locked": false
+  },
+  {
+    "id": "mock-ehr-ai-coach",
+    "title": "CarePath EHR: Medication Access AI Coach",
+    "description": "Practice medication access workflows in a mock EHR with synthetic patient cases, an AI Coach sidecar, and guided remediation.",
+    "topic": "Medication access",
+    "format": "Interactive lab",
+    "level": "Intermediate",
+    "url": "https://jcpopdigitalpartners.github.io/mock-ehr-ai-coach/",
+    "outcome": "Review synthetic medication access cases and use AI-guided remediation while preserving payer and safety requirements.",
+    "visual": "carepath",
+    "preview": "",
+    "locked": false
   }
 ]
