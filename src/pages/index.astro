@@ -1,0 +1,185 @@
+---
+import courses from '../data/courses.json';
+import langGraphLogo from '../brands/LangGraph.png';
+import articulateLogo from '../brands/articulate.jpeg';
+import '../styles/global.css';
+const topics = [...new Set(courses.map(c => c.topic))];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const canonical = new URL(`${base}/`, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Learning Library | JC Choi</title>
+  <meta name="description" content="Practical developer learning by JC Choi. Explore narrated guides and interactive labs on Astro, Next.js, and Webflow Cloud." />
+  <link rel="canonical" href={canonical} /><link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  <meta name="theme-color" content="#17191e" />
+</head>
+<body>
+  <a class="skip" href="#library">Skip to the library</a>
+  <header class="header wrap">
+    <a class="brand" href={`${base}/`} aria-label="The Learning Library home"><span class="mark" aria-hidden="true">ll</span><span>JC CHOI<span class="brand-sub">THE LEARNING LIBRARY</span></span></a>
+    <nav aria-label="Main navigation"><a class="nav-active" href="#library">Library</a><a href="https://github.com/jcpopdigitalpartners" target="_blank" rel="noopener noreferrer">GitHub <span class="external" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></nav>
+  </header>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="title">
+      <div><p class="eyebrow"><span aria-hidden="true">//</span> FOR THE CURIOUS BUILDER</p><h1 id="title">Less watching.<br /><span>More figuring it out.</span></h1><p class="intro-copy">A small library of practical learning experiences.<br class="desktop-break" /> Listen, explore, and put an idea to work.</p></div>
+      <aside class="intro-note"><span class="note-index">01 — THE APPROACH</span><p>Learning should give you<br />something to <em>do.</em></p><span class="note-small">Guides with a voice. Labs with a purpose.</span></aside>
+    </section>
+    <section id="library" aria-labelledby="library-title">
+      <div class="library-top"><div><p class="eyebrow muted">THE COLLECTION</p><h2 id="library-title">Pick your next learning object</h2></div><span class="total">{String(courses.length).padStart(2,'0')} experiences</span></div>
+      <form class="toolbar" role="search" onsubmit="return false">
+        <div class="filters" aria-label="Filter by topic"><button type="button" class="filter active" data-topic="All" aria-pressed="true">All topics</button>{topics.map(topic => <button type="button" class="filter" data-topic={topic} aria-pressed="false">{topic}</button>)}</div>
+        <label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">Search learning objects</span><input id="search" type="search" placeholder="Find something to learn" autocomplete="off" /></label>
+      </form>
+      <p id="results" class="results" aria-live="polite">Showing all {courses.length} experiences</p>
+      <div class="cards">
+        {courses.map((course, index) => <article class="course" data-topic={course.topic} data-preview={course.preview ? `${base}${course.preview}` : undefined} data-search={[course.title, course.description, course.topic, course.format, course.outcome].join(' ').toLowerCase()}>
+          <div class={`cover ${course.visual}`} aria-hidden="true"><span class="cover-id">LEARNING OBJECT / {String(index+1).padStart(2,'0')}</span>
+            {course.visual === 'frameworks' && <div class="framework-visual">
+              <span class="framework-brand">
+                <svg class="framework-logo astro-logo" viewBox="0 0 24 24" role="img" aria-label="Astro logo" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M8.358 20.162c-1.186-1.07-1.532-3.316-1.038-4.944.856 1.026 2.043 1.352 3.272 1.535 1.897.283 3.76.177 5.522-.678.202-.098.388-.229.608-.36.166.473.209.95.151 1.437-.14 1.185-.738 2.1-1.688 2.794-.38.277-.782.525-1.175.787-1.205.804-1.531 1.747-1.078 3.119l.044.148a3.158 3.158 0 0 1-1.407-1.188 3.31 3.31 0 0 1-.544-1.815c-.004-.32-.004-.642-.048-.958-.106-.769-.472-1.113-1.161-1.133-.707-.02-1.267.411-1.415 1.09-.012.053-.028.104-.045.165h.002zm-5.961-4.445s3.24-1.575 6.49-1.575l2.451-7.565c.092-.366.36-.614.662-.614.302 0 .57.248.662.614l2.45 7.565c3.85 0 6.491 1.575 6.491 1.575L16.088.727C15.93.285 15.663 0 15.303 0H8.697c-.36 0-.615.285-.784.727l-5.516 14.99z"/></svg>
+                <span class="framework-small">content &amp; islands</span>
+              </span>
+              <span class="versus">/</span>
+              <span class="framework-brand">
+                <svg class="framework-logo next-logo" viewBox="0 0 24 24" role="img" aria-label="Next.js logo" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z"/></svg>
+                <span class="framework-small">connected workflows</span>
+              </span>
+            </div>}
+            {course.visual === 'boundary' && <div class="boundary-visual"><div class="page-block"><span>CONTENT</span><div class="island-block">INTERACTIVITY</div><span class="boundary-label">one deliberate boundary</span></div></div>}
+            {course.visual === 'cloud' && <div class="cloud-visual"><div><span class="cloud-label">THE SITE</span><strong>Designer</strong></div><span class="connector">+</span><div><span class="cloud-label">THE APP</span><strong>Your IDE</strong></div></div>}
+            {course.visual === 'conductor' && <div class="conductor-logo-wrap"><img class="conductor-logo" src={`${base}/conductor-oss-logo.png`} alt="Conductor OSS" /></div>}
+            {course.visual === 'langgraph' && <div class="langgraph-logo-wrap"><img class="langgraph-logo" src={langGraphLogo.src} alt="LangGraph" /></div>}
+            {course.visual === 'webflow' && <div class="webflow-cloud-logo"><img src={`${base}/webflow-cloud-logo.svg`} alt="" /><span>Webflow Cloud</span></div>}
+            {course.visual === 'containers' && <div class="kubernetes-logo-wrap"><img class="kubernetes-logo" src={`${base}/kubernetes-logo.svg`} alt="Kubernetes" /></div>}
+            {course.visual === 'blog' && <svg class="library-object-icon" viewBox="0 0 320 150" role="img" aria-label="Branching workflow">
+              <g fill="none" stroke="#ff995e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M115 26h67l24 24v74H115z" fill="#252831" /><path d="M182 26v25h24M131 66h58M131 80h42" opacity=".8" />
+                <path d="M160 94v14m0 0-37 20m37-20 37 20" />
+                <circle cx="123" cy="128" r="8" fill="#252831" /><circle cx="197" cy="128" r="8" fill="#252831" />
+              </g>
+              <g fill="#f2f3f5" font-family="ui-monospace, monospace" font-size="9" text-anchor="middle">
+                <text x="160" y="59">WORKFLOW</text><text x="123" y="147">BRANCH</text><text x="197" y="147">JOIN</text>
+              </g>
+            </svg>}
+            {course.visual === 'rise' && <img class="rise-cover-logo" src={articulateLogo.src} alt="Articulate Rise" />}
+            <span class="cover-bottom">{course.topic.toUpperCase()}<span>{course.format === 'Narrated guide' ? 'AUDIO + EXPLORATION' : 'HANDS-ON'}</span></span>
+          </div>
+          <div class="card-content"><div class="metadata"><span class="format">{course.format}</span><span>{course.level}</span></div><h3><a href={course.url} target="_blank" rel="noopener noreferrer">{course.title}<span class="sr-only"> (opens in a new tab)</span></a></h3><p class="description">{course.description}</p><p class="outcome"><span>TAKE AWAY</span>{course.outcome}</p><div class="card-footer"><a class="open-course" href={course.url} target="_blank" rel="noopener noreferrer">Open {course.format === 'Interactive lab' ? 'lab' : 'guide'}<span class="sr-only"> (opens in a new tab)</span></a><a class="source" href={course.repository} target="_blank" rel="noopener noreferrer" aria-label={`Source for ${course.title} (opens in a new tab)`}>Source</a></div></div>
+        </article>)}
+      </div>
+      <div class="empty" hidden><h3>No matches this time</h3><p>Try a different topic or a shorter search.</p><button type="button" id="reset">Clear filters</button></div>
+    </section>
+    <footer><p><strong>Made for learning by doing.</strong><span>Created by JC Choi</span></p><a href="https://github.com/jcpopdigitalpartners" target="_blank" rel="noopener noreferrer">Explore the work on GitHub<span class="sr-only"> (opens in a new tab)</span></a></footer>
+  </main>
+  <style>
+    .library-object-icon { display: block; width: min(100%, 320px); height: auto; margin: auto; flex: none; }
+    .rise-cover-logo { display: block; width: 100px; height: 100px; margin: auto; border-radius: 14px; }
+  </style>
+  <div id="course-preview" aria-hidden="true" hidden><img alt="" /></div>
+  <div id="course-wipe" aria-hidden="true" hidden></div>
+  <div id="course-loading" role="status" hidden><span>Loading</span><span class="loading-dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span><span class="sr-only">…</span></div>
+  <script>
+    import { createCourseTransition } from '../scripts/course-transition.js';
+    const input = document.querySelector<HTMLInputElement>('#search')!;
+    const filters = [...document.querySelectorAll<HTMLButtonElement>('.filter')];
+    const cards = [...document.querySelectorAll<HTMLElement>('.course')];
+    const empty = document.querySelector<HTMLElement>('.empty')!;
+    const results = document.querySelector<HTMLElement>('#results')!;
+    let topic = 'All';
+    function update() {
+      const query = input.value.trim().toLowerCase();
+      let count = 0;
+      cards.forEach(card => { const visible = (topic === 'All' || card.dataset.topic === topic) && card.dataset.search!.includes(query); card.hidden = !visible; if (visible) count++; });
+      empty.hidden = count > 0;
+      results.textContent = `Showing ${count} of ${cards.length} experience${cards.length === 1 ? '' : 's'}`;
+      filters.forEach(button => { const active = button.dataset.topic === topic; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
+    }
+    filters.forEach(button => button.addEventListener('click', () => { topic = button.dataset.topic!; update(); }));
+    input.addEventListener('input', update);
+    document.querySelector('#reset')!.addEventListener('click', () => { topic = 'All'; input.value = ''; update(); input.focus(); });
+
+    // Real links remain usable without JavaScript and for modified clicks.
+    const wipe = document.querySelector<HTMLElement>('#course-wipe')!;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let leaving = false;
+    const preview = document.querySelector<HTMLElement>('#course-preview')!;
+    const loading = document.querySelector<HTMLElement>('#course-loading')!;
+    const previewImage = preview.querySelector<HTMLImageElement>('img')!;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    let transition: ReturnType<typeof createCourseTransition> | undefined;
+    let generation = 0;
+    const images = new Map<string, HTMLImageElement>();
+    cards.forEach(card => {
+      if (!card.dataset.preview) return;
+      const image = new Image();
+      image.src = card.dataset.preview;
+      images.set(card.dataset.preview, image);
+    });
+    function later(action: () => void, ms: number) {
+      timers.push(setTimeout(action, ms));
+    }
+    document.querySelectorAll<HTMLAnchorElement>('.course h3 a, .open-course').forEach(link => {
+      link.removeAttribute('target');
+      link.removeAttribute('rel');
+      link.querySelector('.sr-only')?.remove();
+      link.addEventListener('click', async event => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || reducedMotion.matches) return;
+        event.preventDefault();
+        if (leaving) return;
+        leaving = true;
+        const current = ++generation;
+        const card = link.closest<HTMLElement>('.course');
+        const image = images.get(card?.dataset.preview ?? '');
+        let ready = false;
+        if (image) {
+          ready = await Promise.race([
+            image.decode().then(() => true, () => false),
+            new Promise<boolean>(resolve => later(() => resolve(false), 1500))
+          ]);
+        }
+        if (current !== generation) return;
+        const cover = card?.querySelector<HTMLElement>('.cover');
+        wipe.style.setProperty('--wipe-color', cover ? window.getComputedStyle(cover).backgroundColor : '#17191e');
+        const columns = Math.ceil(window.innerWidth / 64);
+        const rows = Math.ceil(window.innerHeight / 64);
+        wipe.style.setProperty('--columns', String(columns));
+        wipe.style.setProperty('--rows', String(rows));
+        const pixels = document.createDocumentFragment();
+        for (let y = 0; y < rows; y++) {
+          for (let x = 0; x < columns; x++) {
+            const pixel = document.createElement('span');
+            pixels.append(pixel);
+          }
+        }
+        wipe.replaceChildren(pixels);
+        wipe.hidden = false;
+        if (ready && image) previewImage.src = image.src;
+        transition = createCourseTransition({
+          tiles: [...wipe.children], columns, rows, loading,
+          reveal: ready ? () => { preview.hidden = false; } : undefined,
+          navigate: () => window.location.assign(link.href)
+        });
+        transition.play();
+      });
+    });
+    // Back restores the library from the browser cache with no covered screen.
+    window.addEventListener('pageshow', () => {
+      generation++;
+      timers.forEach(clearTimeout);
+      timers.length = 0;
+      preview.hidden = true;
+      loading.hidden = true;
+      previewImage.removeAttribute('src');
+      transition?.kill();
+      transition = undefined;
+      wipe.style.backgroundColor = 'transparent';
+      leaving = false;
+      wipe.hidden = true;
+      wipe.replaceChildren();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+[
+  {
+    "id": "developer-guide",
+    "title": "Astro or Next.js? Make the call",
+    "description": "Explore framework boundaries, architecture defaults, and five decisions that shape a web application.",
+    "topic": "Architecture",
+    "format": "Narrated guide",
+    "level": "Intermediate",
+    "url": "https://jcpopdigitalpartners.github.io/developer-guide/",
+    "outcome": "Choose a framework around the experience you need to build.",
+    "visual": "frameworks",
+    "preview": "/previews/developer-opening.jpg"
+  },
+  {
+    "id": "astro-feature",
+    "title": "Build an Astro feature boundary",
+    "description": "Get hands-on with the boundary between a content-driven page and an interactive feature.",
+    "topic": "Astro",
+    "format": "Interactive lab",
+    "level": "Intermediate",
+    "url": "https://jcpopdigitalpartners.github.io/astro-feature/",
+    "outcome": "Explore where interactivity belongs in an Astro page.",
+    "visual": "boundary",
+    "preview": "/previews/astro-opening.jpg"
+  },
+  {
+    "id": "semantic-routing-lab",
+    "title": "Semantic Routing Lab",
+    "description": "Choose models for different routes, experiment with requests, and explore how routing decisions affect efficiency in a simulated LangGraph pipeline.",
+    "topic": "LangGraph",
+    "format": "Interactive lab",
+    "level": "Intermediate",
+    "url": "https://jcpopdigitalpartners.github.io/semantic-routing-lab/",
+    "outcome": "Trace semantic routing through a StateGraph and compare model choices across PDF, spreadsheet, and unstructured inputs.",
+    "visual": "langgraph",
+    "preview": "/previews/semantic-routing-opening.jpg",
+    "locked": false
+  },
+  {
+    "id": "conductor-oss",
+    "title": "Orchestrating a D&D Quest with Conductor OSS",
+    "description": "Explore workflow orchestration through a Dungeons & Dragons quest, with conditional paths, parallel scouting, and a human dungeon master.",
+    "topic": "Workflow orchestration",
+    "format": "Blog post",
+    "level": "Intermediate",
+    "url": "https://jcpopdigitalpartners.github.io/conductor_oss/",
+    "outcome": "Understand how branching, fork/join, and human approval fit into a durable workflow.",
+    "visual": "conductor",
+    "preview": "/previews/conductor-oss-opening.jpg",
+    "locked": false
+  },
+  {
+    "id": "ny-nj-reciprocity",
+    "title": "Navigating NY-NJ Cross-Border Taxation",
+    "description": "Explore residency, domicile, telecommuting, and tax credits for clients who live in New Jersey and work in New York. Focused on 2025 tax-return preparation.",
+    "topic": "Tax preparation",
+    "format": "Rise course",
+    "url": "https://jpopdigitalc.github.io/ny-nj-reciprocity/",
+    "outcome": "Identify filing obligations and common pitfalls when preparing NY-NJ cross-border returns.",
+    "visual": "rise",
+    "preview": "/previews/ny-nj-reciprocity-opening.jpg",
+    "locked": false
+  },
+  {
+    "id": "webflow-cloud",
+    "title": "Webflow Cloud Audio Field Guide",
+    "description": "Explore interactive tools, campaign experiences, and customer portals that complement a Webflow-managed site.",
+    "topic": "Web Architecture",
+    "format": "Narrated guide",
+    "level": "Beginner",
+    "url": "https://jcpopdigitalpartners.github.io/webflow-cloud-audio-guide/",
+    "outcome": "Understand how to leverage Webflow Cloud's capabilities to enhance user experiences.",
+    "visual": "webflow",
+    "preview": "/previews/webflow-cloud-opening.jpg",
+    "locked": false
+  },
+  {
+    "id": "architecture-guide",
+    "title": "Containers in Practice: A course on Kubernetes for curious developers",
+    "description": "Containers, without the leap of faith. Listen, explore, then prove it in your terminal.",
+    "topic": "Architecture",
+    "format": "Narrated guide and interactive lab",
+    "level": "Intermediate",
+    "url": "https://jcpopdigitalpartners.github.io/containers-in-practice-course/",
+    "outcome": "Each checkpoint asks you to keep evidence of what happened and explain what it proves.",
+    "visual": "containers",
+    "preview": "/previews/containers-in-practice-opening.jpg"
+  }
+]
