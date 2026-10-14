@@ -85,5 +85,18 @@
     "outcome": "Each checkpoint asks you to keep evidence of what happened and explain what it proves.",
     "visual": "containers",
     "preview": "/previews/containers-in-practice-opening.jpg"
-  }
+  },
+  {
+    "id": "growthbook",
+    "title": "Feature Flags, Experimentation, and the Moment Shipping Got Less Terrifying",
+    "description": "How modern teams reduce release risk, learn faster, and avoid turning every deploy into a collective stress event.",
+    "topic": "Feature flags and experimentation",
+    "format": "Blog post",
+    "level": "Beginner",
+    "url": "https://jcpopdigitalpartners.github.io/cmo-blog/",
+    "outcome": "Understand that teams want a more opinionated path.",
+    "visual": "grothbook",
+    "preview": "",
+    "locked": false
+},
 ]
